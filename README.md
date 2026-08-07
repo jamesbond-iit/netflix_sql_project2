@@ -31,7 +31,7 @@ CREATE TABLE netflix
     casts        VARCHAR(1050),
     country      VARCHAR(550),
     date_added   VARCHAR(55),
-    release_year INT,
+    release_year   INT,
     rating       VARCHAR(15),
     duration     VARCHAR(15),
     listed_in    VARCHAR(250),
@@ -65,7 +65,6 @@ SELECT
 	   rating,
 	   COUNT(*),
 	   RANK() OVER (PARTITION BY type ORDER BY COUNT(*) DESC ) as ranking
-	  -- MAX(rating)
 	   FROM netflix
 	   GROUP BY 1,2
 	  ) as t1
