@@ -153,5 +153,6 @@ AS
 	  COUNT(*) as total_content
 	   FROM new_table
 	  GROUP BY 1
+      ORDER BY 2
 
 -- END OF THE PROJECT   
