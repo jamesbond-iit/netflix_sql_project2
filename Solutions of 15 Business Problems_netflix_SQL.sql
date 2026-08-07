@@ -1,42 +1,8 @@
 -- Netflix Data Analysis using SQL
 -- Solutions of 15 Business Problems
-
-    DROP TABLE IF EXISTS netflix;
-    CREATE TABLE netflix
-
-   (
-   
-   show_id      VARCHAR (10),
-   type         VARCHAR (10),
-   title        VARCHAR (150),
-   director     VARCHAR (208),
-   castS	    VARCHAR (1000),
-   country      VARCHAR (150),
-   date_added   VARCHAR (50),
-   release_year   INT,
-   rating       VARCHAR (20),
-   duration     VARCHAR (15),	
-   listed_in    VARCHAR (100),	
-   description  VARCHAR (250)
-   
-   );
-
-  SELECT * FROM netflix; 
-
-
-  SELECT COUNT(*) as total_content FROM netflix;
-
-  SELECT DIsTINCT type FROM netflix;
-
-  SELECT * FROM netflix
-
- 
- 
- -- 15 Business Problems 
  
 -- Q1 COUNT THE NUMBER OF MOVIES VS TV SHOWS ?
-
-    SELECT 
+      SELECT 
 	   type,
 	   COUNT(*) as total_content
 	    FROM netflix
@@ -53,8 +19,7 @@
 	   rating,
 	   COUNT(*),
 	   RANK() OVER (PARTITION BY type ORDER BY COUNT(*) DESC ) as ranking
-	  -- MAX(rating)
-	   FROM netflix
+	  FROM netflix
 	   GROUP BY 1,2
 	  ) as t1
    WHERE 
@@ -188,4 +153,5 @@ AS
 	  COUNT(*) as total_content
 	   FROM new_table
 	  GROUP BY 1
-   
+
+-- END OF THE PROJECT   
